@@ -9,6 +9,13 @@ module.exports = function(defaults) {
       sourceDirs: [
         'public/assets/'
       ]
+    },
+    cssModules: {
+      intermediateOutputPath: 'app/styles/app.scss',
+      extension: 'scss',
+      postcssOptions: {
+        syntax: require('postcss-scss')
+      }
     }
   });
 

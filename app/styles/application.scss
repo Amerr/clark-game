@@ -1,0 +1,173 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #E3E3E3;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.jigsaw-container {
+  flex: 1;
+  border: 1px solid greenyellow;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #8B71CE;
+}
+
+.jigsaw-container {
+  display: flex;
+  flex-direction: row;
+  
+  > div {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #FFF;
+    border-radius: 10px; 
+    box-shadow: 1px 1px solid #ACACAC;
+  }
+}
+
+.jigsaw-object-list,
+.jigsaw-action-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.jigsaw-object-list {
+  .jigsaw-object-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: #FFF;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+
+.jigsaw-playground {
+  flex: 2;
+  border: 1px solid greenyellow;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #C5AAE7;
+  display: flex;
+  flex-direction: row;
+}
+
+.jigsaw-board {
+  flex: 2;
+  background: #FFF;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px; 
+  box-shadow: 1px 1px solid #ACACAC;
+}
+
+.jigsaw-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .jigsaw-placeholder {
+    width: 150px;
+    height: 150px;
+    background: #8EA1AC;
+    margin-right: 30px;
+    position: relative;
+    border-radius: 4px;
+    
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      border-radius: 100%;
+    }
+
+    &::before {
+      background: #FFF;
+      left: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+
+    &::after {
+      background: #8EA1AC;
+      right: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+  }
+}
+
+.jigsaw-action-widget {
+  flex: 1;
+  background: #FFF;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px solid #ACACAC;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
+}
+
+.jigsaw-action-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .action-left,
+  .action-right {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+    &:hover {
+      background-color: #3e8e41;
+    }
+
+    &:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      stroke: #FFF; 
+    }
+  }
+}

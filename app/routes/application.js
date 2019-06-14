@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { action } from '@ember/object';
 
 export default class ApplicationRoute extends Route {
   model() {
@@ -7,4 +8,15 @@ export default class ApplicationRoute extends Route {
       actionList: ['steal', 'hit/bump', 'prosecutes']
     };
   }
+  
+  @action
+  reorderItems() {
+    console.log(...arguments);
+  }
+
+  @action
+  onTarget() {
+    console.log(...arguments);
+  }
+
 }

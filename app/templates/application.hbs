@@ -1,49 +1,54 @@
-<div class="container">
-  <div class="jigsaw-container">
-    <div class="objects">
-      <ul class="jigsaw-object-list">
-        {{#each this.model.objectList as  |objectItem|}}
-          <li>
-            {{svg-jar objectItem}}
-            <span>
-              {{objectItem}}
-            </span>
-          </li>
-        {{/each}}
+<div local-class="container">
+  <div local-class="jigsaw-container">
+    <div local-class="objects">
+      <ul local-class="">
+        <ul local-class="jigsaw-object-list">
+          {{#each this.model.objectList as  |objectItem|}}
+            {{#draggable-object content=this}}
+              <Jigsaw @type='a' @icon={{objectItem}} />
+            {{/draggable-object}}
+          {{/each}}
+        </ul>
       </ul>
     </div>
-    <div class="actions">
-      <ul class="jigsaw-action-list">
+    <div local-class="actions">
+      <ul local-class="jigsaw-action-list">
         {{#each this.model.actionList as  |actionItem|}}
           <li>
-            {{actionItem}}
+            <Jigsaw @type='b' @icon={{actionItem}} />
           </li>
         {{/each}}
       </ul>
     </div>
   </div>
-  <div class="jigsaw-playground">
-    <div class="jigsaw-board">
-      <div class="jigsaw-placeholder">
-
-      </div>
-      <div class="jigsaw-placeholder">
-
-      </div>
-      <div class="jigsaw-placeholder">
-
-      </div>
+  <div local-class="jigsaw-playground">
+    <div local-class="jigsaw-board">
+      {{#draggable-object-target action=(route-action 'onTarget' 1)}}
+        <div local-class="jigsaw-placeholder">
+          
+        </div> 
+      {{/draggable-object-target}}
+      {{#draggable-object-target action=(route-action 'onTarget' 2)}}
+        <div local-class="jigsaw-placeholder">
+          
+        </div> 
+      {{/draggable-object-target}}
+      {{#draggable-object-target action=(route-action 'onTarget' 3)}}
+        <div local-class="jigsaw-placeholder">
+          
+        </div> 
+      {{/draggable-object-target}}
     </div>
-    <div class="jigsaw-action-widget">
-      <div class="jigsaw-action-controls">
-        <button class="action-left">
+    <div local-class="jigsaw-action-widget">
+      <div local-class="jigsaw-action-controls">
+        <button local-class="action-left">
           {{svg-jar "chevron-left-a"}}
         </button>
-        <button class="action-right">
+        <button local-class="action-right">
           {{svg-jar "chevron-right-a"}}
         </button>
       </div>
-      <div class="jigsaw-help-widget">
+      <div local-class="jigsaw-help-widget">
         Bulb icon
       </div>
     </div>
