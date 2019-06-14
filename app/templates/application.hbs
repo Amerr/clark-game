@@ -4,7 +4,10 @@
       <ul class="jigsaw-object-list">
         {{#each this.model.objectList as  |objectItem|}}
           <li>
-            {{objectItem}}
+            {{svg-jar objectItem}}
+            <span>
+              {{objectItem}}
+            </span>
           </li>
         {{/each}}
       </ul>
