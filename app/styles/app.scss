@@ -25,10 +25,87 @@ body {
   background: #8B71CE;
 }
 
+.jigsaw-container {
+  display: flex;
+  flex-direction: row;
+  
+  > div {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #FFF;
+    border-radius: 10px; 
+    box-shadow: 1px 1px solid #ACACAC;
+  }
+}
+
+.jigsaw-object-list,
+.jigsaw-action-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  
+
+  > li {
+    background: #F23C5B;
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 24px;
+    text-shadow: 1px 1px #060606;
+  
+    
+    &::before, &::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      border-radius: 100%;
+    }
+
+    &::before {
+      background: #FFF;
+      left: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+
+    &::after {
+      background: #F23C5B;
+      right: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+
+  }
+}
+
+.jigsaw-action-list {
+  > li {
+    background: #49D9D9;
+    color: #000;
+    text-shadow: 1px 1px #bbeace;
+    
+    &::after {
+      background: #49D9D9;
+    }
+  }
+}
+
+
+
 .jigsaw-playground {
   flex: 2;
   border: 1px solid greenyellow;
-  padding: 20px;
+  padding: 10px;
   margin: 20px;
   border-radius: 10px;
   background: #C5AAE7;
@@ -38,8 +115,18 @@ body {
 
 .jigsaw-board {
   flex: 2;
+  background: #FFF;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px; 
+  box-shadow: 1px 1px solid #ACACAC;
 }
 
 .jigsaw-action-widget {
   flex: 1;
+  background: #FFF;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px solid #ACACAC;
 }
