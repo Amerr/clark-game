@@ -122,6 +122,44 @@ body {
   box-shadow: 1px 1px solid #ACACAC;
 }
 
+.jigsaw-board {
+  display: flex;
+  flex-direction: row;
+
+  .jigsaw-placeholder {
+    width: 150px;
+    height: 150px;
+    background: #8EA1AC;
+    margin-right: 30px;
+    position: relative;
+    border-radius: 4px;
+    
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      border-radius: 100%;
+    }
+
+    &::before {
+      background: #FFF;
+      left: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+
+    &::after {
+      background: #8EA1AC;
+      right: -15px;
+      top: 50%;
+      margin-top: -13px;
+    }
+  }
+}
+
 .jigsaw-action-widget {
   flex: 1;
   background: #FFF;

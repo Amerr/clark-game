@@ -2,7 +2,7 @@
   <div class="jigsaw-container">
     <div class="objects">
       <ul class="jigsaw-object-list">
-        {{#each model.objectList as  |objectItem|}}
+        {{#each this.model.objectList as  |objectItem|}}
           <li>
             {{objectItem}}
           </li>
@@ -11,7 +11,7 @@
     </div>
     <div class="actions">
       <ul class="jigsaw-action-list">
-        {{#each model.actionList as  |actionItem|}}
+        {{#each this.model.actionList as  |actionItem|}}
           <li>
             {{actionItem}}
           </li>
@@ -21,7 +21,15 @@
   </div>
   <div class="jigsaw-playground">
     <div class="jigsaw-board">
-      Drop her
+      <div class="jigsaw-placeholder">
+
+      </div>
+      <div class="jigsaw-placeholder">
+
+      </div>
+      <div class="jigsaw-placeholder">
+
+      </div>
     </div>
     <div class="jigsaw-action-widget">
       <div>
