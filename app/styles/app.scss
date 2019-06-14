@@ -125,6 +125,8 @@ body {
 .jigsaw-board {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   .jigsaw-placeholder {
     width: 150px;
@@ -167,4 +169,47 @@ body {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 1px 1px solid #ACACAC;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
+}
+
+.jigsaw-action-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .action-left,
+  .action-right {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+    &:hover {
+      background-color: #3e8e41;
+    }
+
+    &:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      stroke: #FFF; 
+    }
+  }
 }

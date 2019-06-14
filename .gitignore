@@ -7,7 +7,7 @@
 # dependencies
 /bower_components/
 /node_modules/
-
+*.DS_Store
 # misc
 /.sass-cache
 /connect.lock
