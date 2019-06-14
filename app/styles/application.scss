@@ -40,24 +40,6 @@
   padding: 0;
 }
 
-.jigsaw-object-list {
-  .jigsaw-object-list-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    svg {
-      width: 50px;
-      height: 50px;
-      fill: #FFF;
-    }
-
-    span {
-      text-transform: uppercase;
-    }
-  }
-}
-
 
 
 .jigsaw-playground {
@@ -82,9 +64,24 @@
 
 .jigsaw-board {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+
+  .jigsaw-scene {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .jigsaw-puzzle {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 
   .jigsaw-placeholder {
     width: 150px;
@@ -93,6 +90,9 @@
     margin-right: 30px;
     position: relative;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     &::before,
     &::after {
@@ -169,5 +169,28 @@
       height: 30px;
       stroke: #FFF; 
     }
+  }
+}
+
+.verify-button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+  &:hover {
+    background-color: #3e8e41;
+  }
+
+  &:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
 }

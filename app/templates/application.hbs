@@ -23,27 +23,41 @@
   </div>
   <div local-class="jigsaw-playground">
     <div local-class="jigsaw-board">
-      {{#draggable-object-target action=(action 'onTarget') pos=1}}
-        <div local-class="jigsaw-placeholder">
-          {{#if this.placeholder1}}
-            <Jigsaw @type='a' @icon={{this.placeholder1}} />
-          {{/if}}
-        </div>
-      {{/draggable-object-target}}
-      {{#draggable-object-target action=(action 'onTarget') pos=2}}
-        <div local-class="jigsaw-placeholder">
-          {{#if this.placeholder2}}
-            <Jigsaw @type='b' @icon={{this.placeholder2}} />
-          {{/if}}
-        </div> 
-      {{/draggable-object-target}}
-      {{#draggable-object-target action=(action 'onTarget') pos=3}}
-        <div local-class="jigsaw-placeholder">
-          {{#if this.placeholder3}}
-            <Jigsaw @type='a' @icon={{this.placeholder3}} />
-          {{/if}}
-        </div> 
-      {{/draggable-object-target}}
+      <div local-class="jigsaw-scene">
+        <h2>{{this.currentScene.name}}</h2>
+        <button {{action this.submit}} local-class="verify-button">
+          Verify
+        </button>
+      </div>
+      <div local-class="jigsaw-puzzle">
+        {{#draggable-object-target action=(action 'onTarget') pos=1}}
+          <div local-class="jigsaw-placeholder">
+            {{#if this.placeholder1}}
+              <Jigsaw @type='a' @icon={{this.placeholder1}} />
+              {{else}}
+              Object
+            {{/if}}
+          </div>
+        {{/draggable-object-target}}
+        {{#draggable-object-target action=(action 'onTarget') pos=2}}
+          <div local-class="jigsaw-placeholder">
+            {{#if this.placeholder2}}
+              <Jigsaw @type='b' @icon={{this.placeholder2}} />
+              {{else}}
+              action
+            {{/if}}
+          </div> 
+        {{/draggable-object-target}}
+        {{#draggable-object-target action=(action 'onTarget') pos=3}}
+          <div local-class="jigsaw-placeholder">
+            {{#if this.placeholder3}}
+              <Jigsaw @type='a' @icon={{this.placeholder3}} />
+              {{else}}
+              Object
+            {{/if}}
+          </div> 
+        {{/draggable-object-target}}
+      </div>
     </div>
     <div local-class="jigsaw-action-widget">
       <div local-class="jigsaw-action-controls">
@@ -56,6 +70,9 @@
       </div>
       <div local-class="jigsaw-help-widget">
         Bulb icon
+        <div>
+          {{this.currentScene.hint}}
+        </div>
       </div>
     </div>
   </div>

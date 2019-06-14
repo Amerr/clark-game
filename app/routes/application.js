@@ -5,7 +5,7 @@ export default class ApplicationRoute extends Route {
   model() {
     return {
       objectList: ['car', 'thief', 'user', 'house'],
-      actionList: ['steal', 'hit/bump', 'prosecutes']
+      actionList: ['steal', 'hit', 'prosecutes']
     };
   }
 
