@@ -1,5 +1,36 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
+<div class="container">
+  <div class="jigsaw-container">
+    <div class="objects">
+      <ul class="jigsaw-object-list">
+        {{#each model.objectList as  |objectItem|}}
+          <li>
+            {{objectItem}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="actions">
+      <ul class="jigsaw-action-list">
+        {{#each model.actionList as  |actionItem|}}
+          <li>
+            {{actionItem}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="jigsaw-playground">
+    <div class="jigsaw-board">
+      Drop her
+    </div>
+    <div class="jigsaw-action-widget">
+      <div>
+        Controls and Puzzle
+      </div>
+      <div class="jigsaw-help-widget">
+        Bulb icon
+      </div>
+    </div>
+  </div>
+</div>
 {{outlet}}

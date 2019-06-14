@@ -1,0 +1,45 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #E3E3E3;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.jigsaw-container {
+  flex: 1;
+  border: 1px solid greenyellow;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #8B71CE;
+}
+
+.jigsaw-playground {
+  flex: 2;
+  border: 1px solid greenyellow;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #C5AAE7;
+  display: flex;
+  flex-direction: row;
+}
+
+.jigsaw-board {
+  flex: 2;
+}
+
+.jigsaw-action-widget {
+  flex: 1;
+}
