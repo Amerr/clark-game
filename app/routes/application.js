@@ -8,15 +8,5 @@ export default class ApplicationRoute extends Route {
       actionList: ['steal', 'hit/bump', 'prosecutes']
     };
   }
-  
-  @action
-  reorderItems() {
-    console.log(...arguments);
-  }
-
-  @action
-  onTarget() {
-    console.log(...arguments);
-  }
 
 }

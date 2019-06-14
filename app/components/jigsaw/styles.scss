@@ -11,6 +11,9 @@
   color: #FFF;
   font-size: 24px;
   text-shadow: 1px 1px #060606;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   
   &::before, &::after {
@@ -35,12 +38,24 @@
     top: 50%;
     margin-top: -13px;
   }
+
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: #FFF;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
 }
 
 .jigsaw-item-b {
   background: #49D9D9;
   color: #000;
   text-shadow: 1px 1px #bbeace;
+  font-size: 20px;
   
   &::after {
     background: #49D9D9;

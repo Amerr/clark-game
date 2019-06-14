@@ -4,7 +4,7 @@
       <ul local-class="">
         <ul local-class="jigsaw-object-list">
           {{#each this.model.objectList as  |objectItem|}}
-            {{#draggable-object content=this}}
+            {{#draggable-object content=(hash item=objectItem type='a')}}
               <Jigsaw @type='a' @icon={{objectItem}} />
             {{/draggable-object}}
           {{/each}}
@@ -14,28 +14,34 @@
     <div local-class="actions">
       <ul local-class="jigsaw-action-list">
         {{#each this.model.actionList as  |actionItem|}}
-          <li>
+          {{#draggable-object content=(hash item=actionItem type='b')}}
             <Jigsaw @type='b' @icon={{actionItem}} />
-          </li>
+          {{/draggable-object}}
         {{/each}}
       </ul>
     </div>
   </div>
   <div local-class="jigsaw-playground">
     <div local-class="jigsaw-board">
-      {{#draggable-object-target action=(route-action 'onTarget' 1)}}
+      {{#draggable-object-target action=(action 'onTarget') pos=1}}
         <div local-class="jigsaw-placeholder">
-          
+          {{#if this.placeholder1}}
+            <Jigsaw @type='a' @icon={{this.placeholder1}} />
+          {{/if}}
+        </div>
+      {{/draggable-object-target}}
+      {{#draggable-object-target action=(action 'onTarget') pos=2}}
+        <div local-class="jigsaw-placeholder">
+          {{#if this.placeholder2}}
+            <Jigsaw @type='b' @icon={{this.placeholder2}} />
+          {{/if}}
         </div> 
       {{/draggable-object-target}}
-      {{#draggable-object-target action=(route-action 'onTarget' 2)}}
+      {{#draggable-object-target action=(action 'onTarget') pos=3}}
         <div local-class="jigsaw-placeholder">
-          
-        </div> 
-      {{/draggable-object-target}}
-      {{#draggable-object-target action=(route-action 'onTarget' 3)}}
-        <div local-class="jigsaw-placeholder">
-          
+          {{#if this.placeholder3}}
+            <Jigsaw @type='a' @icon={{this.placeholder3}} />
+          {{/if}}
         </div> 
       {{/draggable-object-target}}
     </div>
